@@ -15,10 +15,10 @@ export const createResponse = (handlerId, responseCode, data = null) => {
     const buffer = Response.encode(response).finish();
 
     const packetLength = Buffer.alloc(TOTAL_LENGTH);
-    packetLength.writeUint32BE(buffer.length + TOTAL_LENGTH + PACKET_TYPE_LENGTH, 0);
+    packetLength.writeUInt32BE(buffer.length + TOTAL_LENGTH + PACKET_TYPE_LENGTH, 0);
 
     const packetType = Buffer.alloc(PACKET_TYPE_LENGTH);
-    packetType.writeUint8(PACKET_TYPE.NORMAL, 0);
+    packetType.writeUInt8(PACKET_TYPE.NORMAL, 0);
 
     return Buffer.concat([packetLength, packetType, buffer]) 
 };
