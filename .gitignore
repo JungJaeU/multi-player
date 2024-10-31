@@ -119,6 +119,3 @@ dist
 # IDE - Jetbrains
 .vscode/*
 /.vscode
-
-package-lock.json
-package.json
